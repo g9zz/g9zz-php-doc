@@ -6,10 +6,21 @@
 
 * [帖子列表](#帖子列表)
 * [帖子详情](#帖子详情)
+* [删除帖子](#删除帖子)
+
+
+### node
+
+* [分类列表](#分类列表)
+
+
+
 
 
 
 ## 前台
+
+
 
 
 
@@ -184,4 +195,96 @@
 ```
 
 
+#### 删除帖子
+
+- PATH `console/post/{id}`
+- METHOD `DELETE`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {}
+}
+```
+
+
+
+#### 分类列表
+
+- PATH `console/node/`
+- METHOD `GET`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": [
+    {
+      "postCount": 0,
+      "weight": 0,
+      "level": 0,
+      "is_show": "no",
+      "name": "节点1",
+      "slug": "node1",
+      "description": null,
+      "newHtml": "节点1"
+    },
+    {
+      "postCount": 0,
+      "weight": 0,
+      "level": 0,
+      "is_show": "no",
+      "name": "节点2",
+      "slug": "node2",
+      "description": null,
+      "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点2"
+    },
+    {
+      "postCount": 0,
+      "weight": 0,
+      "level": 0,
+      "is_show": "no",
+      "name": "节点4",
+      "slug": "node4",
+      "description": null,
+      "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点4"
+    },
+    {
+      "postCount": 0,
+      "weight": 0,
+      "level": 0,
+      "is_show": "no",
+      "name": "节点3",
+      "slug": "node3",
+      "description": null,
+      "newHtml": "节点3"
+    },
+    {
+      "postCount": 0,
+      "weight": 0,
+      "level": 0,
+      "is_show": "no",
+      "name": "节点5",
+      "slug": "node5",
+      "description": null,
+      "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点5"
+    }
+  ]
+}
+```
 
