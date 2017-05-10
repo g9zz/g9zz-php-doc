@@ -12,7 +12,10 @@
 ### node
 
 * [节点列表](#节点列表)
-* [创建节点](#创建节点)
+* [节点创建](#节点创建)
+* [节点详情](#节点详情)
+* [节点修改](#节点修改)
+* [节点删除](#节点删除)
 
 
 
@@ -370,7 +373,7 @@
 }
 ```
 
-#### 创建节点
+#### 节点创建
 
 - PATH `console/node/`
 - METHOD `POST`
@@ -378,11 +381,11 @@
 
 | request        | param    |  note  | other |
 | --------   | -----:   | :----: | ---- |
-| parentId |int|父类ID||
-|weight|int|权重||
-|name|string|节点(中文)名称||
-|slug|string|节点(英文)名称|||
-|description|string|描述||
+| parentId |int|父类ID|必须|
+|weight|int|权重|必须|
+|name|string|节点(中文)名称|必须|
+|slug|string|节点(英文)名称|必须|
+|description|string|描述|非必须|
 
 - RESPONSE
 
@@ -402,4 +405,82 @@
 }
 ```
 
+#### 节点详情
 
+- PATH `console/node/{id}`
+- METHOD `GET`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "postCount": 0,
+    "weight": 0,
+    "level": 0,
+    "is_show": "no",
+    "name": "节点2",
+    "slug": "node2",
+    "description": null
+  }
+}
+```
+
+#### 节点修改
+
+- PATH `console/node/{id}`
+- METHOD `PUT`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+| parentId |int|父类ID|必须|
+|weight|int|权重|必须|
+|name|string|节点(中文)名称|必须|
+|slug|string|节点(英文)名称|必须|
+|description|string|描述|非必须|
+|isShow|`yes`,`no`|是否展示|非必须|
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "postCount": 0,
+    "weight": 1,
+    "level": 0,
+    "is_show": "no",
+    "name": "23333",
+    "slug": "kwxn1",
+    "description": null
+  }
+}
+```
+
+#### 节点删除
+
+- PATH `console/node/{id}`
+- METHOD `DELETE`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```json
+{
+  "message": "成功",
+  "code": 0,
+  "data": {}
+}
+```
