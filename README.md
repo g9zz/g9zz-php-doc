@@ -242,7 +242,9 @@
       "name": "节点1",
       "slug": "node1",
       "description": null,
-      "newHtml": "节点1"
+      "html": {
+        "newHtml": "节点1"
+      }
     },
     {
       "postCount": 0,
@@ -252,7 +254,81 @@
       "name": "节点2",
       "slug": "node2",
       "description": null,
-      "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点2"
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点2"
+      }
+    },
+    {
+      "postCount": 0,
+      "weight": 2,
+      "level": 2,
+      "is_show": "yes",
+      "name": "开玩笑呢",
+      "slug": "kwxn",
+      "description": null,
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--开玩笑呢"
+      }
+    },
+    {
+      "postCount": 0,
+      "weight": 2,
+      "level": 2,
+      "is_show": "yes",
+      "name": "开玩2笑呢",
+      "slug": "kwx2n",
+      "description": null,
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--开玩2笑呢"
+      }
+    },
+    {
+      "postCount": 0,
+      "weight": 2,
+      "level": 2,
+      "is_show": "yes",
+      "name": "开玩24笑呢",
+      "slug": "kwx42n",
+      "description": null,
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--开玩24笑呢"
+      }
+    },
+    {
+      "postCount": 0,
+      "weight": 2,
+      "level": 2,
+      "is_show": "yes",
+      "name": "开玩244笑呢",
+      "slug": "kwx424n",
+      "description": null,
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--开玩244笑呢"
+      }
+    },
+    {
+      "postCount": 0,
+      "weight": 1,
+      "level": 2,
+      "is_show": "yes",
+      "name": "开玩笑呢..",
+      "slug": "33",
+      "description": null,
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--开玩笑呢.."
+      }
+    },
+    {
+      "postCount": 0,
+      "weight": 1,
+      "level": 2,
+      "is_show": "yes",
+      "name": "开玩笑呢4..",
+      "slug": "334",
+      "description": null,
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--开玩笑呢4.."
+      }
     },
     {
       "postCount": 0,
@@ -262,7 +338,9 @@
       "name": "节点4",
       "slug": "node4",
       "description": null,
-      "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点4"
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点4"
+      }
     },
     {
       "postCount": 0,
@@ -272,7 +350,9 @@
       "name": "节点3",
       "slug": "node3",
       "description": null,
-      "newHtml": "节点3"
+      "html": {
+        "newHtml": "节点3"
+      }
     },
     {
       "postCount": 0,
@@ -282,9 +362,44 @@
       "name": "节点5",
       "slug": "node5",
       "description": null,
-      "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点5"
+      "html": {
+        "newHtml": "&nbsp;&nbsp;&nbsp;&nbsp;|-节点5"
+      }
     }
   ]
 }
 ```
+
+#### 分类列表
+
+- PATH `console/node/`
+- METHOD `POST`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+| parentId |int|父类ID||
+|weight|int|权重||
+|name|string|节点(中文)名称||
+|slug|string|节点(英文)名称|||
+|description|string|描述||
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "postCount": 0,
+    "weight": 1,
+    "level": 2,
+    "is_show": "yes",
+    "name": "开玩笑呢4..",
+    "slug": 334,
+    "description": null
+  }
+}
+```
+
 
