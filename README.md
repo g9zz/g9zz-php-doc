@@ -17,7 +17,9 @@
 * [节点修改](#节点修改)
 * [节点删除](#节点删除)
 
+### tag
 
+* [标签列表](#标签列表)
 
 
 
@@ -482,5 +484,52 @@
   "message": "成功",
   "code": 0,
   "data": {}
+}
+```
+
+
+#### 标签列表
+
+- PATH `console/tag/`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|cOrder|`desc`,`asc`|文章数排序||
+|wOrder|`desc`,`asc`|权重排序||
+
+- RESPONSE
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": [
+    {
+      "id": 2,
+      "name": "test2",
+      "displayName": "测试2 标签",
+      "description": "这又是一个标签",
+      "postCount": 0,
+      "weight": 4
+    },
+    {
+      "id": 1,
+      "name": "test1",
+      "displayName": "测试1标签",
+      "description": "这是个标签",
+      "postCount": 1,
+      "weight": 0
+    }
+  ],
+  "pager": {
+    "entities": 2,
+    "current": 1,
+    "total": 1,
+    "limit": 20,
+    "last": 1,
+    "next": "",
+    "previous": ""
+  }
 }
 ```
