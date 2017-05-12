@@ -20,7 +20,10 @@
 ### tag
 
 * [标签列表](#标签列表)
-
+* [标签创建](#标签创建)
+* [标签详情](#标签详情)
+* [标签修改](#标签修改)
+* [标签删除](#标签删除)
 
 
 ## 前台
@@ -531,5 +534,111 @@
     "next": "",
     "previous": ""
   }
+}
+```
+
+#### 标签创建
+
+- PATH `console/tag/`
+- METHOD `POST`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|weight|int|权重|必须|
+|name|string|标签(中文)名称|必须|
+|displayName|string|标签(英文)名称|必须|
+|description|string|描述|非必须|
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 4,
+    "name": "23323333",
+    "displayName": "2333434",
+    "description": "你怎么在开玩笑呢",
+    "postCount": 0,
+    "weight": 1
+  }
+}
+```
+
+#### 标签详情
+
+- PATH `console/tag/{id}`
+- METHOD `GET`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 1,
+    "name": "test1",
+    "displayName": "测试1标签",
+    "description": "这是个标签",
+    "postCount": 1,
+    "weight": 0
+  }
+}
+```
+
+#### 标签修改
+
+- PATH `console/tag/{id}`
+- METHOD `PUT`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|weight|int|权重|必须|
+|name|string|标签(中文)名称|必须|
+|displayName|string|标签(英文)名称|必须|
+|description|string|描述|非必须|
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 4,
+    "name": "23323333",
+    "displayName": "2333434",
+    "description": "你怎么在开玩d笑呢",
+    "postCount": 0,
+    "weight": 1
+  }
+}
+```
+
+#### 标签删除
+
+- PATH `console/tag/{id}`
+- METHOD `DELETE`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```json
+{
+  "message": "成功",
+  "code": 0,
+  "data": {}
 }
 ```
