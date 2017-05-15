@@ -692,3 +692,221 @@
   "data": {}
 }
 ```
+
+#### 回复列表
+
+- PATH `console/reply/`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": [
+    {
+      "source": "ios",
+      "content": "这是一个回复",
+      "contentOriginal": "### 这是一个回复",
+      "post": {
+        "id": null,
+        "title": null
+      },
+      "user": {
+        "id": 1,
+        "name": "叶落山城秋",
+        "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=2911900371,4188553288&os=2777149326,2467460676&simid=80045321,1051818213&pn=3&rn=1&di=188983409670&ln=1986&"
+      }
+    },
+    {
+      "source": null,
+      "content": "<h2>内容呢</h2>",
+      "contentOriginal": "## 内容呢",
+      "post": {
+        "id": 2,
+        "title": "这是标题"
+      },
+      "user": {
+        "id": 2,
+        "name": "叶落",
+        "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3495161387,2602242859&os=3408035920,2765980592&simid=4249158544,682669875&pn=1&rn=1&di=170437508230&ln=1986"
+      }
+    },
+    {
+      "source": null,
+      "content": "<h2>内容呢 - 哈哈哈</h2>",
+      "contentOriginal": "## 内容呢 - 哈哈哈",
+      "post": {
+        "id": 2,
+        "title": "这是标题"
+      },
+      "user": {
+        "id": 2,
+        "name": "叶落",
+        "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3495161387,2602242859&os=3408035920,2765980592&simid=4249158544,682669875&pn=1&rn=1&di=170437508230&ln=1986"
+      }
+    },
+    {
+      "source": null,
+      "content": "<h2>内容呢 - 哈哈哈</h2>",
+      "contentOriginal": "## 内容呢 - 哈哈哈",
+      "post": {
+        "id": 2,
+        "title": "这是标题"
+      },
+      "user": {
+        "id": 2,
+        "name": "叶落",
+        "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3495161387,2602242859&os=3408035920,2765980592&simid=4249158544,682669875&pn=1&rn=1&di=170437508230&ln=1986"
+      }
+    },
+    {
+      "source": null,
+      "content": "<h2>内容呢 - 哈哈哈</h2>",
+      "contentOriginal": "## 内容呢 - 哈哈哈",
+      "post": {
+        "id": 2,
+        "title": "这是标题"
+      },
+      "user": {
+        "id": 2,
+        "name": "叶落",
+        "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3495161387,2602242859&os=3408035920,2765980592&simid=4249158544,682669875&pn=1&rn=1&di=170437508230&ln=1986"
+      }
+    }
+  ],
+  "pager": {
+    "entities": 5,
+    "current": 1,
+    "total": 1,
+    "limit": 20,
+    "last": 1,
+    "next": "",
+    "previous": ""
+  }
+}
+```
+
+#### 回复创建
+
+- PATH `console/reply/`
+- METHOD `POST`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|postId|int|帖子ID|必须|
+|content|string|回复内容|必须|
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "source": null,
+    "content": "<h2>内容呢 - 哈哈哈</h2>",
+    "contentOriginal": "## 内容呢 - 哈哈哈",
+    "post": {
+      "id": 2,
+      "title": "这是标题"
+    },
+    "user": {
+      "id": 2,
+      "name": "叶落",
+      "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3495161387,2602242859&os=3408035920,2765980592&simid=4249158544,682669875&pn=1&rn=1&di=170437508230&ln=1986"
+    }
+  }
+}
+```
+
+#### 回复详情
+
+- PATH `console/reply/{id}`
+- METHOD `GET`
+- PARAMS
+
+| request        | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "source": null,
+    "content": "<h2>内容呢 - 哈哈哈</h2>",
+    "contentOriginal": "## 内容呢 - 哈哈哈",
+    "post": {
+      "id": 2,
+      "title": "这是标题"
+    },
+    "user": {
+      "id": 2,
+      "name": "叶落",
+      "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3495161387,2602242859&os=3408035920,2765980592&simid=4249158544,682669875&pn=1&rn=1&di=170437508230&ln=1986"
+    }
+  }
+}
+```
+
+#### 回复修改
+
+- PATH `console/reply/{id}`
+- METHOD `PUT`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|content|string|回复内容|必须|
+
+- RESPONSE
+
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "source": null,
+    "content": "<h2>内容呢 - 哈哈哈</h2>",
+    "contentOriginal": "## 内容呢 - 哈哈哈",
+    "post": {
+      "id": 2,
+      "title": "这是标题"
+    },
+    "user": {
+      "id": 2,
+      "name": "叶落",
+      "avatar": "https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=宠物&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3495161387,2602242859&os=3408035920,2765980592&simid=4249158544,682669875&pn=1&rn=1&di=170437508230&ln=1986"
+    }
+  }
+}
+```
+
+#### 回复删除
+
+- PATH `console/reply/{id}`
+- METHOD `DELETE`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```json
+{
+  "message": "成功",
+  "code": 0,
+  "data": {}
+}
+```
