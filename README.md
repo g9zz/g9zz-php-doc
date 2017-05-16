@@ -35,6 +35,11 @@
 * [回复修改](#回复修改)
 * [回复删除](#回复删除)
 
+### append
+
+* [附言列表](#附言列表)
+* [附言创建](#附言创建)
+# [附言详情](#附言详情)
 
 ## 前台
 
@@ -908,5 +913,111 @@
   "message": "成功",
   "code": 0,
   "data": {}
+}
+```
+
+
+#### 附言列表
+
+- PATH `console/append/`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": [
+    {
+      "id": 1,
+      "content": "这是个附言....",
+      "contentOriginal": "### 这是个附言",
+      "createdAt": "2017-04-22T00:00:00+00:00",
+      "post": {
+        "id": 2,
+        "title": "这是标题"
+      }
+    },
+    {
+      "id": 2,
+      "content": "<h2>内容呢 - 哈哈哈</h2>",
+      "contentOriginal": "## 内容呢 - 哈哈哈",
+      "createdAt": "2017-05-16T15:42:37+00:00",
+      "post": {
+        "id": 2,
+        "title": "这是标题"
+      }
+    }
+  ],
+  "pager": {
+    "entities": 2,
+    "current": 1,
+    "total": 1,
+    "limit": 20,
+    "last": 1,
+    "next": "",
+    "previous": ""
+  }
+}
+```
+
+#### 附言创建
+
+- PATH `console/append/`
+- METHOD `POST`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|content|string|附言内容|必须|
+|postId|int|帖子内容|必须|
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "content": "<h2>内容呢 - 哈哈哈</h2>",
+    "contentOriginal": "## 内容呢 - 哈哈哈",
+    "createdAt": "2017-05-16T15:42:37+00:00",
+    "post": {
+      "id": 2,
+      "title": "这是标题"
+    }
+  }
+}
+```
+
+#### 附言详情
+
+- PATH `console/append/{id}`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 2,
+    "content": "<h2>内容呢 - 哈哈哈</h2>",
+    "contentOriginal": "## 内容呢 - 哈哈哈",
+    "createdAt": "2017-05-16T15:42:37+00:00",
+    "post": {
+      "id": 2,
+      "title": "这是标题"
+    }
+  }
 }
 ```
