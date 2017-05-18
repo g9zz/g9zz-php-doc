@@ -39,7 +39,16 @@
 
 * [附言列表](#附言列表)
 * [附言创建](#附言创建)
-# [附言详情](#附言详情)
+* [附言详情](#附言详情)
+
+### permission
+
+* [权限列表](#权限列表)
+* [权限创建](#权限创建)
+* [权限修改](#权限修改)
+* [权限详情](#权限详情)
+
+
 
 ## 前台
 
@@ -1018,6 +1027,123 @@
       "id": 2,
       "title": "这是标题"
     }
+  }
+}
+```
+
+#### 权限详情
+
+- PATH `console/permission`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": [
+    {
+      "id": 1,
+      "name": "first",
+      "displayName": "第一个权限",
+      "description": "这是一个权限哦"
+    },
+    {
+      "id": 2,
+      "name": "second",
+      "displayName": "第er个权限",
+      "description": "这是一个权限哦"
+    }
+  ],
+  "pager": {
+    "entities": 2,
+    "current": 1,
+    "total": 1,
+    "limit": 20,
+    "last": 1,
+    "next": "",
+    "previous": ""
+  }
+}
+```
+
+#### 权限创建
+
+- PATH `console/permission`
+- METHOD `POST`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|name|string|权限名(建议英文或者英文加数字)|必须,唯一,没有对英文校验|
+|displayName|string|权限别名|必须,唯一|
+|description|string|描述|非必须|
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 3,
+    "name": "three",
+    "displayName": "第san个权限",
+    "description": "这是一个权限哦"
+  }
+}
+```
+
+#### 权限修改
+
+- PATH `console/permission/{id}`
+- METHOD `PUT`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|name|string|权限名(建议英文或者英文加数字)|必须,唯一,没有对英文校验|
+|displayName|string|权限别名|必须,唯一|
+|description|string|描述|非必须|
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 3,
+    "name": "three",
+    "displayName": "第三个权限",
+    "description": "这是一个权限哦"
+  }
+}
+```
+
+#### 权限详情
+
+- PATH `console/permission/{id}`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 3,
+    "name": "three",
+    "displayName": "第三个权限",
+    "description": "这是一个权限哦"
   }
 }
 ```
