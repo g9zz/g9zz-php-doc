@@ -49,7 +49,14 @@
 * [权限详情](#权限详情)
 * [权限删除](#权限删除)
 
+### role
 
+* [角色列表](#角色列表)
+* [角色创建](#角色创建)
+* [角色修改](#角色修改)
+* [角色详情](#角色详情)
+* [角色删除](#角色删除)
+* [角色分配权限](#角色分配权限)
 
 ## 前台
 
@@ -1165,5 +1172,211 @@
   "message": "成功",
   "code": 0,
   "data": {}
+}
+```
+
+#### 角色列表
+
+- PATH `console/role`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": [
+    {
+      "id": 1,
+      "name": "first",
+      "displayName": "第一个角色",
+      "description": "这是个角色哦"
+    },
+    {
+      "id": 2,
+      "name": "second",
+      "displayName": "第er个角色",
+      "description": "这是个角色哦"
+    },
+    {
+      "id": 3,
+      "name": "three",
+      "displayName": "第3个角色",
+      "description": "这是个角色哦",
+      "permission": [
+        {
+          "id": 1,
+          "name": "first",
+          "displayName": "第一个权限"
+        },
+        {
+          "id": 4,
+          "name": "three",
+          "displayName": "第三个权限"
+        },
+        {
+          "id": 5,
+          "name": "four",
+          "displayName": "第si个权限"
+        },
+        {
+          "id": 6,
+          "name": "five",
+          "displayName": "第wu个权限"
+        }
+      ]
+    }
+  ],
+  "pager": {
+    "entities": 3,
+    "current": 1,
+    "total": 1,
+    "limit": 20,
+    "last": 1,
+    "next": "",
+    "previous": ""
+  }
+}
+```
+
+#### 角色创建
+
+- PATH `console/role`
+- METHOD `POST`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|name|string|角色名,推荐非中文|必须|
+|displayName|string|角色别名,推荐英文|必须|
+|description|string|描述|非必须|
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 4,
+    "name": "admin",
+    "displayName": "管理员",
+    "description": "管理员哦"
+  }
+}
+```
+
+#### 角色详情
+
+- PATH `console/role/{id}`
+- METHOD `GET`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 3,
+    "name": "three",
+    "displayName": "第3个角色",
+    "description": "这是个角色哦",
+    "permission": [
+      {
+        "id": 1,
+        "name": "first",
+        "displayName": "第一个权限"
+      },
+      {
+        "id": 4,
+        "name": "three",
+        "displayName": "第三个权限"
+      },
+      {
+        "id": 5,
+        "name": "four",
+        "displayName": "第si个权限"
+      },
+      {
+        "id": 6,
+        "name": "five",
+        "displayName": "第wu个权限"
+      }
+    ]
+  }
+}
+```
+
+#### 角色详情
+
+- PATH `console/role/{id}`
+- METHOD `DELETE`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "message": "成功",
+  "code": 0,
+  "data": {}
+}
+```
+
+#### 角色分配权限
+
+- PATH `console/role/{roleId}/permission`
+- METHOD `POST`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|permissionIds|array|权限id数组|必须|
+
+- RESPONSE
+```
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 3,
+    "name": "three",
+    "displayName": "第3个角色",
+    "description": "这是个角色哦",
+    "permission": [
+      {
+        "id": 1,
+        "name": "first",
+        "displayName": "第一个权限"
+      },
+      {
+        "id": 4,
+        "name": "three",
+        "displayName": "第三个权限"
+      },
+      {
+        "id": 5,
+        "name": "four",
+        "displayName": "第si个权限"
+      },
+      {
+        "id": 6,
+        "name": "five",
+        "displayName": "第wu个权限"
+      }
+    ]
+  }
 }
 ```
