@@ -47,6 +47,7 @@
 * [权限创建](#权限创建)
 * [权限修改](#权限修改)
 * [权限详情](#权限详情)
+* [权限删除](#权限删除)
 
 
 
@@ -1145,5 +1146,24 @@
     "displayName": "第三个权限",
     "description": "这是一个权限哦"
   }
+}
+```
+
+#### 权限删除
+
+- PATH `console/permission/{id}`
+- METHOD `DELETE`
+- PARAMS
+
+| request  | param    |  note  | other |
+| --------   | -----:   | :----: | ---- |
+|||||
+
+- RESPONSE
+```
+{
+  "message": "成功",
+  "code": 0,
+  "data": {}
 }
 ```
